@@ -16,46 +16,46 @@ motor_esquerdo = Motor(b, PORT_B)
 motor_direito = Motor(b, PORT_C)
 
 # FORWARD
-def f():
+def frente():
 	motor_esquerdo.run(100)
 	motor_direito.run(100)
 
 # BACKWARD
-def b():
+def tras():
 	motor_esquerdo.run(-100)
 	motor_direito.run(-100)
 
 # STOP
-def s():
+def para():
 	motor_direito.idle()
 	motor_esquerdo.idle()
 
 # RIGHT
-def r():
+def direito():
 	motor_direito.run (100)
 	motor_esquerdo.run(80)
 
 # LEFT
-def l():
+def esquerdo():
 	motor_direito.run (80)
 	motor_esquerdo.run (100)
 
 while True:
     tecla=ord(sys.stdin.read(1))
     if tecla==65:
-        f()
+        frente()
         print "frente"
     elif tecla==66:    
-        b() 
+        tras() 
         print "tras"
     elif tecla==67:    
-        r()
+        direito()
         print "direita"
     elif tecla==68:    
-        l()
+        esquerdo()
         print "esquerda"
     elif tecla==32:    
-        s()
+        para()
         print "para"
     else:
         print tecla
